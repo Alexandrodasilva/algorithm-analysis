@@ -9,7 +9,7 @@
 // A entrada é composta por uma linha contendo o número n representando o número de pontos do conjunto, seguida por n linhas contendo dois números cada contendo as coordenadas de cada ponto.
 // EX:
 // 5
-// 136 729
+// 316 729
 // 917 29
 // 547 533
 // 892 881
@@ -25,6 +25,27 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() {
-	return 0;
+// typedef struct p{
+// 	int x;
+// 	int y;
+// }pontos
+
+// float calc(int x, int y){
+//  x = x*x;
+//  y = y*y;
+//  return(sqrt(x+y));
+// }
+
+int main (void) {
+    int i;
+	int quant;
+	int x;
+	int y;
+	scanf("%d", &quant);
+	for(i = 0; i < quant; i++){
+		scanf("%d %d",&x, &y);
+	}
+	printf("%d %d", x, y);
+   return EXIT_SUCCESS;
 }
+
