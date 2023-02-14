@@ -25,12 +25,19 @@
 #include <math.h>
 #include <stdlib.h>
 
+
 void calc(int q, int *x, int *y){
-	int i;
-	printf("%d", *x);
-	for(i = 0; i < q; i++){
-		printf("%d %d ", x[i], y[i]);
+	int i, j;
+	float aux = 10000000;
+	for(i = 1; i <= q; i++){
+		for(j = i+1; j <= q; j++){
+			if(sqrt(pow(x[i]-x[j], 2) + pow(y[i]-y[j], 2)) < aux){
+				aux = sqrt(pow(x[i]-x[j], 2) + pow(y[i]-y[j], 2));
+			}
+		}
 	}
+	printf("%.4f ", aux);
+
 }
 
 int main (void) {
@@ -39,7 +46,7 @@ int main (void) {
 	scanf("%d", &quant);
 	int x[quant];
 	int y[quant];
-	for(i = 0; i < quant; i++){
+	for(i = 1; i <= quant; i++){
 		scanf("%d %d",&x[i], &y[i]);
 	}
 	calc(quant, x, y);
