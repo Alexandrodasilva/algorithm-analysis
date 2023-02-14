@@ -25,27 +25,24 @@
 #include <math.h>
 #include <stdlib.h>
 
-// typedef struct p{
-// 	int x;
-// 	int y;
-// }pontos
-
-// float calc(int x, int y){
-//  x = x*x;
-//  y = y*y;
-//  return(sqrt(x+y));
-// }
+void calc(int q, int *x, int *y){
+	int i;
+	printf("%d", *x);
+	for(i = 0; i < q; i++){
+		printf("%d %d ", x[i], y[i]);
+	}
+}
 
 int main (void) {
     int i;
 	int quant;
-	int x;
-	int y;
 	scanf("%d", &quant);
+	int x[quant];
+	int y[quant];
 	for(i = 0; i < quant; i++){
-		scanf("%d %d",&x, &y);
+		scanf("%d %d",&x[i], &y[i]);
 	}
-	printf("%d %d", x, y);
+	calc(quant, x, y);
    return EXIT_SUCCESS;
 }
 
