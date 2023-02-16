@@ -69,9 +69,10 @@ void calc(int N_inscritos, int *inscritos, int *notas, int N_testes, int *testes
      for( i = 1; i <= N_testes; i++){
         for(j = 1; j <= N_inscritos; j++){
             if(inscritos[j] == testes[i]){
-                printf("%d", notas[i]);
-            }else{
-                printf("NAO SE APRESENTOU");
+                printf("%d\n", notas[j]);
+            }
+            else if(testes[i] != inscritos[j]){
+                printf("NAO SE APRESENTOU\n");
             }
         }
      }
