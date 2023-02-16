@@ -71,35 +71,31 @@ void calc(int N_inscritos, int *inscritos, int *notas, int N_testes, int *testes
             if(inscritos[j] == testes[i]){
                 printf("%d\n", notas[j]);
             }
-            else if(testes[i] != inscritos[j]){
-                printf("NAO SE APRESENTOU\n");
-            }
         }
+        printf("NAO SE APRESENTOU\n");
      }
 }
 
 int main() {
 	int i, N_inscritos, N_testes;
-    printf("N de inscritos\n"); 
+
     scanf("%d", &N_inscritos);
     int inscritos[N_inscritos];
     for(i = 1; i <= N_inscritos; i++){
         scanf("%d", &inscritos[i]);
     }
 
-    printf("N de notas\n");
     int notas[N_inscritos];
     for(i = 1; i <= N_inscritos; i++){
       scanf("%d", &notas[i]);  
     }
 
-    printf("N de testes\n");
     scanf("%d", &N_testes);
     int testes[N_testes];
     for(i = 1; i <= N_testes; i++){
         scanf("%d", &testes[i]);  
     }
-    printf("acabou\n");
+
     calc(N_inscritos, inscritos, notas, N_testes, testes);
     return 0;
 }
