@@ -2,23 +2,18 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-
-int mdc(int x, int y){
-    while((x < y && y % x) || (y < x && x % y)){
-        if(x < y){
-            y -=x; 
-        }else{
-            x -=y;
-        }
+//ALGOEITMO DE EUCLIDES
+int mdc(int a, int b){
+    int aux, r;
+    if(b == 0){
+        return a;
     }
-
+    return mdc(b, a % b);
 }
 int main(){
-    int x, y;
-
-    scanf("%d",&x );
-    scanf("%d", &y);
-    mdc(x, y);
-    printf("%d", mdc(x, y));
+    int a, b;
+    scanf("%d",&a );
+    scanf("%d", &b);
+    printf("%d", mdc(a,b));
     return 0;
 }
