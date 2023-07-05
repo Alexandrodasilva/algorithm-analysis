@@ -12,24 +12,29 @@ void derivada(int *coeficiente, int *expoente){
     for(i = 0; i < tamanho; i++){
         coeficiente[i] *= expoente[i];
         expoente[i] -= 1;
-         printf("%d %d", coeficiente[i], expoente[i]);
+         printf("coe=%d expo=%d\n", coeficiente[i], expoente[i]);
     }
 
 }
 int main() {
-    int n, i, coeficiente[2], expoente[2];
-    char incognita[2];
-    while(scanf("%d", &n) != EOF){
-        if(n == 0){
-            break;
-        }
+    int n, i;
+    scanf("%d", &n);
+    int coeficiente[n], expoente[n];
+    char incognita[n];
+    //while(scanf("%d", &n) != EOF){
+       // if(n == 0){
+         //   break;
+       // }
         for(i = 0; i < n; i++){
             scanf("%d %c %d", &coeficiente[i], &incognita[i], &expoente[i]);
         }
         coeficiente[n] = -1;
         expoente[n] = -1;
-    }
+    //}
     derivada(coeficiente, expoente);
     // printf("f'(x)=")
+    for(int i = 0; i < n; i++){
+         printf("coe=%d expo=%d ", coeficiente[i], expoente[i]);
+    }
 	return 0;
 }
