@@ -3,18 +3,19 @@
 #include <math.h>
 #include <stdlib.h>
 
-int tamstr(){
-
+int tamstr(char *str){
+  int str_legth;
+  str_legth = strlen(str);
+  return str_legth;
 }
 int main() {
     int i =0, j = 0;
     char str[10];
-    while(strcmp(str, "FIM") !=0){
-        scanf("%[^\n]%*c", str);
+    while(scanf("%9s", str) == 1){
+      if(strcmp(str, "FIM") == 0){
+        break;
+      }
+      printf("%d\n",tamstr(str));
     }
-    if(strcmp(str, "FIM") !=0){
-      printf("%c", str);
-    }
-    
 	return 0;
 }
