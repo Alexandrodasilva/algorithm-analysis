@@ -11,8 +11,12 @@ void derivada(int *coeficiente, int *expoente){
     }
 
     for(i = 0; i < tamanho; i++){
-        coeficiente[i] *= expoente[i];
-        expoente[i] -= 1;
+        if(expoente[i] > 0){
+            coeficiente[i] *= expoente[i];
+            expoente[i] -= 1;   
+        }else if(expoente[i] == 0){
+            coeficiente[i] = 0;
+        }
     }
 
 }
@@ -42,26 +46,16 @@ int main() {
         printf("f'(x)=");
 
         for(int i = 0; coeficiente[i] != -1; i++){
-            if(coeficiente > 0 && coeficiente[i + 1] != -1){
-                printf("+");
-                if(coeficiente[i] == 0){
-
-                }// caso o expoente seja -1, não faz nada, já que o expoente inicial é 0
-                else if(expoente[i] ==  0){
+            if(expoente[i] == 0 && coeficiente[i] != 0){
+                if(coeficiente[i] > 0){
+                    printf("+%d", coeficiente[i]);
+                }else if(coeficiente[i] < 0){
                     printf("%d", coeficiente[i]);
                 }
-                else{
-                    printf("%d%c^%d", coeficiente[i], incognita[i], expoente[i]);
-                }
-            }else if(coeficiente < 0){
-                printf("-");
-                if(coeficiente[i] == 0){
-
-                }// caso o expoente seja -1, não faz nada, já que o expoente inicial é 0
-                else if(expoente[i] ==  0){
-                    printf("%d", coeficiente[i]);
-                }
-                else{
+            }else if(expoente[i] > 0){
+                if(coeficiente[i] > 0){
+                    printf("+%d%c^%d", coeficiente[i], incognita[i], expoente[i]);
+                }else if(coeficiente[i] < 0){
                     printf("%d%c^%d", coeficiente[i], incognita[i], expoente[i]);
                 }
             }
