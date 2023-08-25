@@ -48,7 +48,7 @@ void procurar(lista *head, char *nome){
     while(novo->prox != NULL){
         if(novo->nome == nome){
             printf("%s\n- %f\n- %d\n", novo->nome, novo->valor, novo->quantidade);
-        }else if(novo->nome != nome && novo->prox == null){
+        }else{
             printf("%s nao foi encontrado.", nome);
         }
         novo = novo->prox;
