@@ -1,30 +1,38 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 #include <math.h>
-//o que falta nesse quest?o que n?o passa, meu Deus do C?u
+#include <stdlib.h>
+
 typedef struct {
-    int x, y, tipo;
+    long long int x, y, tipo;
 } Nave;
 
+typedef struct{
+    Nave nave1, nave2;
+    double distancia;
+}parMaisproximo;
+
 double calc(Nave nave1, Nave nave2) {
-    int x = (nave1.x - nave2.x);
-    int y = (nave1.y - nave2.y);
+    long long int x = (nave1.x - nave2.x);
+    long long int y = (nave1.y - nave2.y);
     return (x * x + y * y);
 }
 
+parMaisproximo encontrarParMaisProximo(){
+
+}
 
 int main() {
-    int n;
+    long long int n;
     scanf("%d", &n);
-    
-    Nave *nave = (Nave*)malloc(50000 * sizeof(Nave));
+    Nave *nave = (Nave*)malloc(10000000 * sizeof(Nave));
     
     for (int i = 0; i < n; i++) {
         scanf("%d %d %d", &nave[i].x, &nave[i].y, &nave[i].tipo);
     }
 
     double menorDist = -1;
-    int j, i, indNave1 = -1, indNave2 = -1;
+    long long int j, i, indNave1 = -1, indNave2 = -1;
 
     for (i = 0; i < n; i++) {
         for (j = i + 1; j < n; j++) {
