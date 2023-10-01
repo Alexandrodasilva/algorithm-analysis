@@ -1,0 +1,87 @@
+\documentclass[a4paper,addpoints]{exam}
+\usepackage[brazilian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[linesnumbered,vlined,portuguese,ruled,nofillcomment]{algorithm2e}
+\usepackage[paperheight=29.7cm, paperwidth=21cm, top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\usepackage{ amssymb }
+\usepackage{enumitem}
+
+\begin{document}
+
+\pagestyle{headandfoot}
+\extraheadheight{.25in}
+\firstpageheader{\textbf{Universidade Federal de Sergipe - Departamento de Computação\\
+COMP0412 - Projeto e Análise de Algoritmos - 2023.1\\
+Prof. Breno Piva \\ \ \\}}{\textbf{Atividade 1}}{\textbf{18 de setembro de 2023}}
+
+\makebox[\textwidth]{\textbf{Nome: Breno Piva}} 
+
+\vspace{5mm}
+
+\begin{center}
+
+\begin{itemize}
+\item Descrição do Problema:
+
+O exército confederado continua à procura do fugitivo canuano e, para encontrá-lo, decidiu montar um cerco em um conjunto de corpos celestes em que certamente o fugitivo se encontraria. Para colocar o máximo número de naves à procura do fugitivo sem desfazer o cerco, o general Zoster ordenou que fosse determinado o menor conjunto de corpos celestes que quando ligados em sequência, contivesse todos os demais corpos celestes do conjunto e que fosse colocada uma nave em cada um destes corpos. Contudo, devido ao limite de alcance, L, dos radares metassônicos, Zoster ordenou que caso a distância entre dois corpos consecutivos na sequência seja maior que L, deve-se adicionalmente colocar naves estacionárias no espaço, em número suficiente para que a distância entre duas naves consecutivas no cerco não seja maior que L. Zoster precisa dessas informações o mais rápido possível, antes que o fugitivo tenha tempo de se evadir do conjunto de corpos celestes definido.
+
+Como especialista em computação do exército confederado, seu trabalho é executar as ordens do general Zoster. Para sua sorte, o conjunto de corpos celestes definido nasceu a partir da explosão da mesma estrela, várias eras atrás e, por este motivo, todos os corpos se encontram no mesmo plano, o que facilita enormemente o trabalho.
+
+\item Entrada:
+
+A primeira linha de cada caso de testes consiste de dois números N e L que descrevem, respectivamente, o número de corpos celestes e o limite de alcance dos radares metassônicos. A seguir são apresentadas N linhas contendo as coordenadas dos corpos no plano que os contém. 
+
+O número N, número de pontos e L, limite de alcance, são números inteiros entre $1$ e $10^6$.Já as coordenadas são dadas por números inteiros entre $0$ e $4,2*10^9$. Pode-se assumir que as coordenadas dos corpos estão em posição geral.
+
+\item Saída:
+
+A saída é dada por um único número inteiro indicando o número de naves confederadas que serão utilizadas no cerco, seguido por uma quebra de linha.
+
+\item Tempo Máximo para Cada Caso de Teste: 1 segundo
+
+\item Entrada Exemplo 1:
+
+5 2 \\
+0 0 \\
+2 0 \\
+0 3 \\
+2 3 \\
+1 1 
+
+\item Saída Exemplo 1:
+
+6
+
+\item Entrada Exemplo 2:
+
+5 2 \\
+9 9 \\
+8 8 \\
+3 0 \\
+4 3 \\
+9 5
+
+\item Saída Exemplo 2:
+
+13
+
+\item Objetivos:
+
+Avaliar a capacidade de desenvolver algoritmos para problemas relacionados à envoltória convexa utilizando técnicas como dividir-e-conquistar ou transformar-e-conquistar.
+
+\item Técnicas/Algoritmos Válidos:
+
+Deve ser possível resolver o problema através de algoritmos construídos com técnicas como dividir-e-conquistar (e.g.: quickhull, mergehull) ou transformar-e-conquistar (e.g.: graham scan) que possuam uma complexidade de ordem $O(n\log n)$.
+
+\item Técnicas/Algoritmos Inválidos:
+
+Algoritmos que tenham complexidade $\omega(n \log n)$ não devem ser aceitos. Devido à forma como os pontos serão gerados, algoritmos de complexidade $O(n.h)$ (onde $h$ representa o número de pontos sobre a envoltória convexa) também não serão aceitos já que em algumas instâncias todos os pontos estarão sobre a envoltória convexa o que implica que $n.h = n^2$. Portanto, algoritmos utilizando força bruta (complexidade $\Omega(n^3)$) e o Jarvi's March (complexidade $O(n.h)$) não serão aceitos.
+
+\end{itemize}
+
+
+\end{center}
+
+\end{document}
+
+
